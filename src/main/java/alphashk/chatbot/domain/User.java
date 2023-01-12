@@ -15,7 +15,7 @@ import java.util.Set;
 @Table(name = "users")
 public class User extends BaseEntity {
 
-    @Column(name = "name") // #todo grade systematization
+    @Column(name = "name")
     private String name;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")

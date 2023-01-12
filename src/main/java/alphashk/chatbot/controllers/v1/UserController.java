@@ -18,13 +18,6 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping
-    @ResponseStatus(HttpStatus.OK)
-    public Set<UserDTO> getAllUsers() {
-        return userService.getAllUsers();
-    }
-
-
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public UserDTO getUserById(@PathVariable Long id) {
@@ -37,7 +30,7 @@ public class UserController {
         return userService.getQuestions(userService.getUserById(id));
     }
 
-    @PostMapping("/users")
+    @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
     public UserDTO createNewUser(@RequestBody UserDTO userDTO) {
         return userService.createNewUser(userDTO);

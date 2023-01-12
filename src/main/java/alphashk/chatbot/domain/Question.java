@@ -21,4 +21,9 @@ public class Question extends BaseEntity {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "question")
     private Set<Answer> answers = new HashSet<>();
+
+    public void addAnswer(Answer answer) {
+        answers.add(answer);
+        answer.setQuestion(this);
+    }
 }

@@ -29,14 +29,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Set<UserDTO> getAllUsers() {
-        return userRepository.findAll()
-                .stream()
-                .map(userMapper::userToUserDTO)
-                .collect(Collectors.toSet());
-    }
-
-    @Override
     public UserDTO getUserById(Long id) {
         return userMapper.userToUserDTO(userRepository.findById(id).get());
     }

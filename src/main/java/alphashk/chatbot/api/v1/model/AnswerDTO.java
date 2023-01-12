@@ -8,7 +8,4 @@ import lombok.Data;
 @Data
 public class AnswerDTO {
     private String body;
-
-    @JsonProperty("answer_url")
-    private String answerUrl;
 }
