@@ -7,6 +7,8 @@ import alphashk.chatbot.services.QuestionService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
+
 @RestController
 @RequestMapping("/api/v1/questions")
 public class QuestionController {
@@ -21,7 +23,7 @@ public class QuestionController {
 
     @PostMapping(value = {"/users/{userId}"})
     @ResponseStatus(HttpStatus.CREATED)
-    public AnswerSetDTO createNewQuestion(@RequestBody QuestionDTO questionDTO, @PathVariable Long userId) {
+    public AnswerSetDTO createNewQuestion(@RequestBody QuestionDTO questionDTO, @PathVariable Long userId) throws IOException {
         QuestionDTO question = questionService.createNewQuestion(questionDTO, userId);
         questionService.saveAnswerForQuestion(question.getId(), answerService.getAnswer(question.getBody()));
 

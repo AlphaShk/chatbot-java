@@ -30,7 +30,7 @@ public class UserController {
         return userService.getQuestions(userService.getUserById(id));
     }
 
-    @PostMapping("/new")
+    @PostMapping({"/",""})
     @ResponseStatus(HttpStatus.CREATED)
     public UserDTO createNewUser(@RequestBody UserDTO userDTO) {
         return userService.createNewUser(userDTO);
