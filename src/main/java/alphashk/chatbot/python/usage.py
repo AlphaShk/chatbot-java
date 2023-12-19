@@ -11,7 +11,7 @@ tokenizer.add_special_tokens({'pad_token': '[PAD]'})
 tokenizer.add_special_tokens({'sep_token': '<|sep|>'})
 
 model.resize_token_embeddings(len(tokenizer))
-model.load_weights("/usr/src/app/src/main/java/alphashk/chatbot/python/data/models/2023-02-25_2016_GPT2-Model_02_4.8193.ckpt")
+model.load_weights("/usr/src/app/src/main/java/alphashk/chatbot/python/data/models/MODEL-PATH")
 
 ask = pipeline("text-generation", model=model, tokenizer=tokenizer)
 

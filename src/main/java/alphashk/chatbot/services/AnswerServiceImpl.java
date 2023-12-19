@@ -13,7 +13,7 @@ public class AnswerServiceImpl implements AnswerService {
     @Override
     public String getAnswer(String question) {
 
-        String[] command = new String[]{"python3", "/usr/src/app/src/main/java/alphashk/chatbot/python/usage.py", question};
+        String[] command = new String[]{"python3", "PATH", question};
         return executeCommand(command);
     }
 
